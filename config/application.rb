@@ -2,6 +2,8 @@ require_relative "boot"
 
 require "rails/all"
 
+require 'pry'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -23,5 +25,10 @@ module PokemonApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    console do
+      require 'pry'
+      config.console = Pry
+    end
   end
 end
