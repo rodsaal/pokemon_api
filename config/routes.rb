@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :pokemons, only: [:show]
+    get 'pokemons/:id', to: 'pokemons#show'
   end
-
 end
